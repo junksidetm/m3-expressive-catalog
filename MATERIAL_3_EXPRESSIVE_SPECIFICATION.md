@@ -220,7 +220,7 @@ When an AI system is asked to produce Jetpack Compose code compliant with Materi
 
 While this specification defines the formal M3 Expressive design tokens and Compose invariants, modern Android applications frequently combine Expressive aesthetics with real-world Community FOSS implementation patterns.
 
-The open-source benchmark project [**Pulse Studio (`junksidetm/PulseStudio`)**](https://github.com/junksidetm/PulseStudio) provides a 1:1 side-by-side shootout evaluating these paradigms in production:
+The open-source benchmark project [**Pulse Studio (`junksidetm/PulseStudio`)**](https://codeberg.org/mrdarksidetm/PulseStudio) provides a 1:1 side-by-side shootout evaluating these paradigms in production:
 
 ### 8.1 Connected Settings Architecture (`DenserMeerkat/June`)
 - **Container Geometry:** 28dp clipped outer container with 2dp inter-item hairline spacing.
