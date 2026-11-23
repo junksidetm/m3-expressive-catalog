@@ -312,3 +312,18 @@
   - `app/build.gradle.kts` (v1.4.0): Incremented versionCode to 5 and versionName to "1.4.0", enabled `buildConfig = true`.
   - `.github/workflows/release.yml` (v1.4.0): Updated default tag targeting to v1.4.0.
 - **Notes:** Pushing signed commit and tag v1.4.0 across GitHub, GitLab, and Codeberg mirrors, creating GitHub Release v1.4.0 with permanent production signed APK.
+
+
+## [2026-11-23 18:45:00 IST] - Version 1.5.0: Official Bun Shape Vector & 9-Side Cookie Asset Integration
+- **Version**: 1.5.0 (versionCode 6)
+- **Status**: 100% (Completed & Verified)
+- **Architecture**:
+  - **Mathematical Bun Shape Fix**: Eradicated synthetic canvas trigonometric approximation in `AboutScreen.kt`. Replaced with the official, canonical M3 Expressive Bun shape vector (`R.drawable.shape_bun`, 135dp) and 9-side cookie vector (`R.drawable.shape_9_side_cookie`, 145dp) from the Expressive Shapes catalog.
+  - Pure native hardware-accelerated VectorDrawable rendering with zero CPU allocations during ambient rotation and floating animations.
+- **Files Created**:
+  - `app/src/main/res/drawable/shape_bun.xml`
+  - `app/src/main/res/drawable/shape_9_side_cookie.xml`
+- **Files Modified**:
+  - `app/build.gradle.kts`: Bumped `versionCode = 6` and `versionName = "1.5.0"`.
+  - `app/src/main/java/com/example/m3catalog/ui/screens/AboutScreen.kt`
+  - `Version.md`

@@ -216,7 +216,7 @@ fun AboutScreen(
                     .height(280.dp),
                 contentAlignment = Alignment.Center
             ) {
-                // Background Layer: Top-Left Animated M3 Expressive "Bun" Shape
+                // Background Layer: Top-Left Animated M3 Expressive "Bun" Shape (from Expressive Shapes)
                 Box(
                     modifier = Modifier
                         .align(Alignment.CenterStart)
@@ -225,26 +225,17 @@ fun AboutScreen(
                             rotationZ = bunRotation
                         }
                 ) {
-                    Canvas(modifier = Modifier.size(135.dp)) {
-                        val c = Offset(size.width / 2f, size.height / 2f)
-                        val baseR = size.width * 0.40f
-                        val path = Path()
-                        val steps = 72
-                        for (i in 0..steps) {
-                            val angle = i * (2.0 * PI / steps)
-                            // M3 Expressive Bun geometry: arched top dome + soft flat base
-                            val modulation = 1f + 0.22f * cos(angle * 2.0).toFloat() - 0.14f * sin(angle).toFloat()
-                            val curR = baseR * modulation
-                            val x = c.x + (curR * cos(angle)).toFloat()
-                            val y = c.y + (curR * sin(angle)).toFloat()
-                            if (i == 0) path.moveTo(x, y) else path.lineTo(x, y)
-                        }
-                        path.close()
-                        drawPath(path, color = Color(0xFF6750A4).copy(alpha = 0.88f))
-                    }
+                    Image(
+                        painter = painterResource(id = R.drawable.shape_bun),
+                        contentDescription = "Expressive Bun Shape",
+                        modifier = Modifier.size(135.dp),
+                        colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
+                            MaterialTheme.colorScheme.secondary.copy(alpha = 0.88f)
+                        )
+                    )
                 }
 
-                // Background Layer: Bottom-Right Animated M3 Expressive "9-Side Cookie" Shape
+                // Background Layer: Bottom-Right Animated M3 Expressive "9-Side Cookie" Shape (from Expressive Shapes)
                 Box(
                     modifier = Modifier
                         .align(Alignment.CenterEnd)
@@ -255,23 +246,14 @@ fun AboutScreen(
                             scaleY = cookieScale
                         }
                 ) {
-                    Canvas(modifier = Modifier.size(145.dp)) {
-                        val c = Offset(size.width / 2f, size.height / 2f)
-                        val baseR = size.width * 0.40f
-                        val path = Path()
-                        val steps = 90
-                        for (i in 0..steps) {
-                            val angle = i * (2.0 * PI / steps)
-                            // 9 harmonic scallop lobes
-                            val mod = 1f + 0.16f * sin(angle * 9.0).toFloat()
-                            val curR = baseR * mod
-                            val x = c.x + (curR * cos(angle)).toFloat()
-                            val y = c.y + (curR * sin(angle)).toFloat()
-                            if (i == 0) path.moveTo(x, y) else path.lineTo(x, y)
-                        }
-                        path.close()
-                        drawPath(path, color = Color(0xFF6750A4).copy(alpha = 0.88f))
-                    }
+                    Image(
+                        painter = painterResource(id = R.drawable.shape_9_side_cookie),
+                        contentDescription = "Expressive 9-Side Cookie Shape",
+                        modifier = Modifier.size(145.dp),
+                        colorFilter = androidx.compose.ui.graphics.ColorFilter.tint(
+                            MaterialTheme.colorScheme.tertiary.copy(alpha = 0.88f)
+                        )
+                    )
                 }
 
                 // Foreground Layer: Main Icon Squircle Container (App Icon fills exactly 75% of space)
